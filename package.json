@@ -21,7 +21,9 @@
     "windows-tests": "tap -R spec test/*.test.js --timeout=120",
     "lint": "jscs `find ./cli -name '*.js'` -v && jscs `find ./lib -name '*.js'` -v",
     "check-tests": "! grep 'test\\.only' test/*.test.js -n",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [
     "security",
@@ -55,7 +57,8 @@
     "then-fs": "^2.0.0",
     "undefsafe": "0.0.3",
     "update-notifier": "^0.5.0",
-    "url": "^0.11.0"
+    "url": "^0.11.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "babel-cli": "^6.7.7",
